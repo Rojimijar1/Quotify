@@ -1,28 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Random Quote Generator</title>
-
-  <!-- Google Font for a pleasant look -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quotify — Daily Inspiration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
-    <h1 class="title">Random Quote Generator</h1>
 
-    <section class="quote-card" aria-live="polite">
-      <blockquote id="quote-text" class="quote">Click "Get Quote" to see a quote.</blockquote>
-      <cite id="quote-author" class="author"></cite>
-    </section>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
 
-    <button id="get-quote" class="btn" type="button" style="font-weight: 600;">Get Quote</button>
+  <header class="header">
+    <div class="logo">Quotify</div>
+    <div class="header-tag">Daily Inspiration</div>
+  </header>
 
-    <footer class="footer" style="color:white">Made with ☕ &nbsp; • &nbsp; Simple demo</footer>
+  <main class="main">
+
+    <div class="card" id="quoteCard">
+      <div class="card-inner">
+
+        <div class="quote-meta">
+          <span class="category-badge" id="categoryBadge">Motivation</span>
+          <span class="quote-number" id="quoteNumber">#1</span>
+        </div>
+
+        <div class="quote-mark">"</div>
+        <p class="quote-text" id="quoteText">
+          The only way to do great work is to love what you do.
+        </p>
+        <p class="quote-author" id="quoteAuthor">— Steve Jobs</p>
+
+        <div class="divider"></div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="newQuoteBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            New Quote
+          </button>
+          <button class="btn btn-icon" id="copyBtn" title="Copy to clipboard">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </button>
+          <button class="btn btn-icon" id="twitterBtn" title="Share on Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </button>
+          <button class="btn btn-icon" id="favoriteBtn" title="Save to favorites">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="heartIcon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="motivation">Motivation</button>
+      <button class="filter-btn" data-category="wisdom">Wisdom</button>
+      <button class="filter-btn" data-category="success">Success</button>
+      <button class="filter-btn" data-category="life">Life</button>
+      <button class="filter-btn" data-category="technology">Technology</button>
+    </div>
+
+    <div class="favorites-section" id="favoritesSection" style="display:none;">
+      <h3 class="favorites-title">Saved Quotes</h3>
+      <div class="favorites-list" id="favoritesList"></div>
+    </div>
+
   </main>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <footer class="footer">
+    Built with ♥ by Roji Mijar &nbsp;·&nbsp;
+    <a href="https://github.com/Rojimijar1/Random-quote-generator" target="_blank">GitHub</a>
+  </footer>
 
   <script src="script.js"></script>
 </body>
