@@ -23,6 +23,9 @@ It is designed as a beginner-friendly project and is perfect for practicing basi
 - CSS
 - JavaScript
 
+**Live Demo**
+https://rojimijar1.github.io/Quotify/
+
 **Author**
 - **Roji mijar**
 - GitHub: [Rojimijar1](https://github.com/Rojimijar1)
