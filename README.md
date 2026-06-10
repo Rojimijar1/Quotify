@@ -5,7 +5,7 @@
 It is designed as a beginner-friendly project and is perfect for practicing basic **web development skills** like DOM manipulation, event handling, and styling.
 
 🚀 **Demo**
-![Quote generator](quote-generator.png)
+![Quote generator](quotify.png)
 
  **Features**
 - Displays a random quote from a predefined list
